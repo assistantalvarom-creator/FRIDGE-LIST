@@ -1,0 +1,15 @@
+{
+  "name": "Lista de la Nevera",
+  "short_name": "Lista Nevera",
+  "description": "Toca el tag NFC de la nevera para añadir o ver lo que hace falta comprar.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#16a34a",
+  "orientation": "portrait",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

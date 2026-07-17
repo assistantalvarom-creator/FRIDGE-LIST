@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1">
+<title>Lista de la Compra</title>
+<meta name="theme-color" content="#16a34a">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lista Nevera">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">🧊 Lista de la Nevera</div>
+  <div id="conn-status" class="conn-status" title="Estado de la conexión"></div>
+</header>
+
+<div id="setup-banner" class="setup-banner hidden">
+  <strong>Falta configuración:</strong> abre <code>firebase-config.js</code> y pega las claves de tu proyecto Firebase
+  (mira README.md). La app no puede guardar nada hasta que hagas eso.
+</div>
+
+<main>
+
+  <section id="screen-add" class="screen active">
+    <form id="add-form" class="add-form" autocomplete="off">
+      <div class="input-wrap">
+        <input id="item-input" type="text" placeholder="¿Qué necesitas?" autocomplete="off" autocapitalize="sentences" />
+        <div id="suggestions" class="suggestions hidden"></div>
+      </div>
+      <button type="submit" class="btn-primary">Añadir</button>
+    </form>
+
+    <h2 class="section-title">Añadidos frecuentemente</h2>
+    <p id="history-empty" class="muted hidden">Los productos que añadas aparecerán aquí para volver a añadirlos rápido.</p>
+    <div id="history-chips" class="chips"></div>
+  </section>
+
+  <section id="screen-cart" class="screen">
+    <p id="cart-empty" class="muted hidden">Tu lista está vacía 🎉</p>
+    <ul id="cart-list" class="cart-list"></ul>
+    <button id="clear-btn" class="btn-danger hidden">Vaciar lista</button>
+  </section>
+
+</main>
+
+<nav class="tabbar">
+  <button class="tab active" data-screen="add">
+    <span class="tab-icon">➕</span><span>Añadir</span>
+  </button>
+  <button class="tab" data-screen="cart">
+    <span class="tab-icon">🛒</span><span>Carrito</span>
+    <span id="cart-count" class="badge hidden">0</span>
+  </button>
+</nav>
+
+<div id="toast" class="toast"></div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
